@@ -4,8 +4,11 @@ search_filter = (search_string) ->
   restaurants = $('#restaurants .restaurant, #stock-restaurants .restaurant')
 
   restaurants.each (i, r) ->
-    street = $(r).find('span.street')[0]
-    metro = $(r).find('span.metro')[0]
+    r = $(r)
+    r.removeHighlight()
+
+    street = r.find('span.street')[0]
+    metro = r.find('span.metro')[0]
 
     found_in_street = street.innerHTML.toLowerCase().indexOf(search_string) != -1
 
@@ -14,9 +17,11 @@ search_filter = (search_string) ->
       found_in_metro = metro.innerHTML.toLowerCase().indexOf(search_string) != -1
 
     if found_in_street || found_in_metro
-      $(r).show()
+      r.highlight(search_string)
+      r.show()
     else
-      $(r).hide()
+      r.removeHighlight()
+      r.hide()
 
 
 $(document).ready ->
@@ -27,10 +32,7 @@ $(document).ready ->
   search_button = search_form.find('button')[0]
 
   $(search_input).keyup ->
-    length = this.value.length
-
-    if length > 1 or length == 0
-      search_filter(this.value)
+    search_filter(this.value)
 
   $(search_input).keypress (e) ->
     if e.which == 13
