@@ -4,24 +4,29 @@
       %h3= link_to @restaurant.title, @restaurant.originalLink
 
       %h6.subheader
-        %b Город:
+        %b
+          Город:
         = @restaurant.city.name
 
       %h6.subheader
-        %b Улица:
+        %b
+          Улица:
         = link_to @restaurant.street, addr2maps(@restaurant.street, @restaurant.city.name), :target => '_blank'
 
       -unless @restaurant.metro.empty?
         %h6.subheader
-          %b Метро:
+          %b
+            Метро:
           = @restaurant.metro
 
       %h6.subheader
-        %b Телефон:
+        %b
+          Телефон:
         = @restaurant.phone
 
       %h6.subheader
-        %b Время работы:
+        %b
+          Время работы:
         = @restaurant.business_hours
 
   .row
