@@ -7,6 +7,8 @@ namespace :parse do
   EVRASIA_URL = "http://www.evrasia.spb.ru"
 
   task :restaurants => :environment do
+    puts "Parsing restaurants..."
+
     Restaurant.delete_all
 
     doc = Nokogiri::HTML(open(EVRASIA_URL))
@@ -19,6 +21,7 @@ namespace :parse do
       parse_city_url(city_url)
     end
 
+    puts 'ok'
   end
 
   def parse_city_url(city_url)
@@ -29,7 +32,7 @@ namespace :parse do
     restaurants = doc.css("div#treeview a")
 
     restaurants.each do |r|
-      r_url =  EVRASIA_URL + r['href']
+      r_url = EVRASIA_URL + r['href']
 
       parse_restaurant_url(r_url, city_id)
     end
@@ -42,7 +45,7 @@ namespace :parse do
 
     id = restaurant_url[/\d+/].to_i
     title = info.css("p")[1].css("strong").children.text
-    street = info.css("p")[0].children.text.strip!
+    street = info.css("p")[0].children.text
     metro = info.css("p")[1].children.text[/(?<=метро: )(.*)(?=\r\n)/]
     phone = info.css("p")[1].children.text[/(?<=Тел.: )(.*)(?=\r\n)/]
     business_hours = info.css("p")[1].children.text[/(?<=работы: )(.*)(?=\r\n)/]

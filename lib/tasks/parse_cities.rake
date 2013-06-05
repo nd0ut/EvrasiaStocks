@@ -7,6 +7,8 @@ namespace :parse do
   EVRASIA_URL = "http://www.evrasia.spb.ru"
 
   task :cities => :environment do
+    puts "Parsing cities..."
+
     City.delete_all
 
     doc = Nokogiri::HTML(open(EVRASIA_URL))
@@ -19,6 +21,8 @@ namespace :parse do
 
       City.create! id: c_id, name: c_name
     end
+
+    puts 'ok'
 
   end
 

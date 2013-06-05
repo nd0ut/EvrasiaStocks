@@ -8,6 +8,8 @@ namespace :parse do
   STOCKS_URL = EVRASIA_URL + '/public/akcii.html'
 
   task :stocks => :environment do
+    puts "Parsing stocks..."
+
     Stock.delete_all
 
     doc = Nokogiri::HTML(open(STOCKS_URL))
@@ -28,6 +30,7 @@ namespace :parse do
 
     end
 
+    puts 'ok'
   end
 
   def parse_stock_description(stock_url)
