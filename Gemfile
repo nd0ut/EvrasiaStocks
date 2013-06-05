@@ -43,3 +43,12 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'nokogiri'
+gem 'haml-rails'
+
+group :development do
+  gem 'erb2haml'
+end
+
+gem 'zurb-foundation'
