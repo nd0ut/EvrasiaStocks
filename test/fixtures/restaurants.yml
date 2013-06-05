@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  restaurant_id: 1
+  street: MyString
+  metro: MyString
+  phone: MyString
+  business_hours: MyString
+
+two:
+  restaurant_id: 1
+  street: MyString
+  metro: MyString
+  phone: MyString
+  business_hours: MyString

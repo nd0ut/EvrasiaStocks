@@ -1,0 +1,21 @@
+.panel
+  .row
+    .small.large.columns
+      %h3= link_to @restaurant.title, @restaurant.originalLink
+      .subheader= "Улица: #{@restaurant.street}"
+      .subheader= "Метро: #{@restaurant.metro}"
+      .subheader= "Часы работы: #{@restaurant.business_hours}"
+
+  .row
+    .small.large.columns
+      %br
+      %h3 Акции
+      %ul.small-block-grid-2.large-block-grid-4
+        - @restaurant.stocks.each do |s|
+          %li
+            .alert-box.secondary
+              = link_to stock_path(s) do
+                = image_tag s.image_url, :class => 'th'
+              %center
+                %br
+                .subheader= s.stock_hours.find_by(stock_id: s.id).hours
