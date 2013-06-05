@@ -20,8 +20,16 @@ $(document).ready ->
   search_input = search_form.find('input')[0]
   search_button = search_form.find('button')[0]
 
-#  $(search_input).keyup ->
-#    search_filter(this.value)
+  $(search_input).keyup ->
+    length = this.value.length
+
+    if length > 2 or length == 0
+      search_filter(this.value)
+
+  $(search_input).keypress (e) ->
+    if e.which == 13
+      search_filter(this.value)
+      e.preventDefault()
 
   $(search_button).click (e) ->
     search_filter(search_input.value)
