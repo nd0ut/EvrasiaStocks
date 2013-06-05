@@ -12,7 +12,7 @@ search_filter = (search_string) ->
     metro = r.find('span.metro')[0]
     hours = r.find('span.hours')[0]
 
-    found_in_title = street.innerHTML.toLowerCase().indexOf(search_string) != -1
+    found_in_title = title.innerHTML.toLowerCase().indexOf(search_string) != -1
     found_in_street = street.innerHTML.toLowerCase().indexOf(search_string) != -1
 
     found_in_metro = false

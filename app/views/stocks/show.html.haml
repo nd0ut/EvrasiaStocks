@@ -26,14 +26,15 @@
             .alert-box.secondary
               .row
                 .small.large.columns
-                  = link_to restaurant_path(r), :title => '_blank'
-                    %span.title= r.title
-              .row
-                .small.large.columns
-                  Улица:
-                  =link_to addr2maps(r.street, r.city.name), :target => '_blank'  do
-                    %span.street=r.street
-              .row
-                .small.large.columns
-                  Время акции:
-                  %span.hours=r.stock_hours.find_by(stock_id: @stock.id).hours
+                  %h5
+                    = link_to restaurant_path(r), :target => '_blank' do
+                      %span.title= r.title
+
+                  %h6.subheader
+                    %b Улица:
+                    =link_to addr2maps(r.street, r.city.name), :target => '_blank'  do
+                      %span.street=r.street
+
+                  %h6.subheader
+                    %b Время акции:
+                    %span.hours= r.stock_hours.find_by(stock_id: @stock.id).hours
