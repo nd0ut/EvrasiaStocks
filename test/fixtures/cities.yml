@@ -1,9 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
+city1:
   id: 1
-  name: MyString
+  name: Санкт-Петербург
 
-two:
-  id: 1
-  name: MyString
+city2:
+  id: 2
+  name: Москва
+
+city3:
+  id: 3
+  name: Казань
+
+city4:
+  id: 4
+  name: Киев
+
+city5:
+  id: 5
+  name: Новосибирск
+
+city6:
+  id: 6
+  name: Минск

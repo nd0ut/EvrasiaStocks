@@ -1,11 +1,419 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+stock_hour1:
+  id: 4488
+  stock_id: 112
+  restaurant_id: 17
+  hours: пн-вс, 12:00-15:00
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+stock_hour2:
+  id: 4511
+  stock_id: 112
+  restaurant_id: 19
+  hours: пн-вс, 12:00-15:00
+
+stock_hour3:
+  id: 4512
+  stock_id: 112
+  restaurant_id: 20
+  hours: пн-вс, 11:00-23:00
+
+stock_hour4:
+  id: 4530
+  stock_id: 112
+  restaurant_id: 29
+  hours: пн-вс 12:00-00:00, пт-сб 12:00-02:00
+
+stock_hour5:
+  id: 4536
+  stock_id: 112
+  restaurant_id: 18
+  hours: пн-пт, 11:00-23:00
+
+stock_hour6:
+  id: 4544
+  stock_id: 112
+  restaurant_id: 28
+  hours: пн-пт, 11:00-23:00
+
+stock_hour7:
+  id: 4558
+  stock_id: 112
+  restaurant_id: 24
+  hours: пн-пт, 11:00-23:00
+
+stock_hour8:
+  id: 4562
+  stock_id: 112
+  restaurant_id: 27
+  hours: пн-пт, 11:00-15:00
+
+stock_hour9:
+  id: 4563
+  stock_id: 112
+  restaurant_id: 25
+  hours: пн-вс, 12:00-23:00
+
+stock_hour10:
+  id: 4564
+  stock_id: 112
+  restaurant_id: 26
+  hours: пн-вс, 12:00-23:00
+
+stock_hour11:
+  id: 4568
+  stock_id: 112
+  restaurant_id: 22
+  hours: пн-вс, 18:00-21:30
+
+stock_hour12:
+  id: 4570
+  stock_id: 112
+  restaurant_id: 16
+  hours: пн-пт, 12:00-23:00
+
+stock_hour13:
+  id: 4578
+  stock_id: 112
+  restaurant_id: 23
+  hours: вс-чт, 10:00-22:00
+
+stock_hour14:
+  id: 4587
+  stock_id: 112
+  restaurant_id: 21
+  hours: пн-вс, 12:00-15:00
+
+stock_hour15:
+  id: 4589
+  stock_id: 112
+  restaurant_id: 30
+  hours: пн-вс, 12:00-23:00,  23:00-05:00
+
+stock_hour16:
+  id: 4612
+  stock_id: 113
+  restaurant_id: 26
+  hours: пн-вс, 12:00-23:00
+
+stock_hour17:
+  id: 4621
+  stock_id: 100
+  restaurant_id: 17
+  hours: всегда
+
+stock_hour18:
+  id: 4641
+  stock_id: 100
+  restaurant_id: 19
+  hours: всегда
+
+stock_hour19:
+  id: 4642
+  stock_id: 100
+  restaurant_id: 20
+  hours: всегда
+
+stock_hour20:
+  id: 4661
+  stock_id: 100
+  restaurant_id: 29
+  hours: всегда
+
+stock_hour21:
+  id: 4667
+  stock_id: 100
+  restaurant_id: 18
+  hours: всегда
+
+stock_hour22:
+  id: 4675
+  stock_id: 100
+  restaurant_id: 28
+  hours: всегда
+
+stock_hour23:
+  id: 4689
+  stock_id: 100
+  restaurant_id: 24
+  hours: всегда
+
+stock_hour24:
+  id: 4693
+  stock_id: 100
+  restaurant_id: 27
+  hours: всегда
+
+stock_hour25:
+  id: 4694
+  stock_id: 100
+  restaurant_id: 25
+  hours: всегда
+
+stock_hour26:
+  id: 4695
+  stock_id: 100
+  restaurant_id: 26
+  hours: всегда
+
+stock_hour27:
+  id: 4700
+  stock_id: 100
+  restaurant_id: 22
+  hours: всегда
+
+stock_hour28:
+  id: 4702
+  stock_id: 100
+  restaurant_id: 16
+  hours: всегда
+
+stock_hour29:
+  id: 4711
+  stock_id: 100
+  restaurant_id: 23
+  hours: всегда
+
+stock_hour30:
+  id: 4720
+  stock_id: 100
+  restaurant_id: 21
+  hours: всегда
+
+stock_hour31:
+  id: 4722
+  stock_id: 100
+  restaurant_id: 30
+  hours: всегда
+
+stock_hour32:
+  id: 4750
+  stock_id: 107
+  restaurant_id: 17
+  hours: всегда
+
+stock_hour33:
+  id: 4770
+  stock_id: 107
+  restaurant_id: 19
+  hours: всегда
+
+stock_hour34:
+  id: 4771
+  stock_id: 107
+  restaurant_id: 20
+  hours: всегда
+
+stock_hour35:
+  id: 4790
+  stock_id: 107
+  restaurant_id: 29
+  hours: всегда
+
+stock_hour36:
+  id: 4796
+  stock_id: 107
+  restaurant_id: 18
+  hours: всегда
+
+stock_hour37:
+  id: 4803
+  stock_id: 107
+  restaurant_id: 28
+  hours: всегда
+
+stock_hour38:
+  id: 4817
+  stock_id: 107
+  restaurant_id: 24
+  hours: всегда
+
+stock_hour39:
+  id: 4821
+  stock_id: 107
+  restaurant_id: 27
+  hours: всегда
+
+stock_hour40:
+  id: 4822
+  stock_id: 107
+  restaurant_id: 25
+  hours: всегда
+
+stock_hour41:
+  id: 4823
+  stock_id: 107
+  restaurant_id: 26
+  hours: всегда
+
+stock_hour42:
+  id: 4828
+  stock_id: 107
+  restaurant_id: 22
+  hours: всегда
+
+stock_hour43:
+  id: 4830
+  stock_id: 107
+  restaurant_id: 16
+  hours: всегда
+
+stock_hour44:
+  id: 4839
+  stock_id: 107
+  restaurant_id: 23
+  hours: всегда
+
+stock_hour45:
+  id: 4848
+  stock_id: 107
+  restaurant_id: 21
+  hours: всегда
+
+stock_hour46:
+  id: 4850
+  stock_id: 107
+  restaurant_id: 30
+  hours: всегда
+
+stock_hour47:
+  id: 4879
+  stock_id: 102
+  restaurant_id: 17
+  hours: всегда
+
+stock_hour48:
+  id: 4901
+  stock_id: 102
+  restaurant_id: 19
+  hours: всегда
+
+stock_hour49:
+  id: 4902
+  stock_id: 102
+  restaurant_id: 20
+  hours: всегда
+
+stock_hour50:
+  id: 4921
+  stock_id: 102
+  restaurant_id: 29
+  hours: всегда
+
+stock_hour51:
+  id: 4927
+  stock_id: 102
+  restaurant_id: 18
+  hours: всегда
+
+stock_hour52:
+  id: 4935
+  stock_id: 102
+  restaurant_id: 28
+  hours: всегда
+
+stock_hour53:
+  id: 4949
+  stock_id: 102
+  restaurant_id: 24
+  hours: всегда
+
+stock_hour54:
+  id: 4953
+  stock_id: 102
+  restaurant_id: 27
+  hours: всегда
+
+stock_hour55:
+  id: 4954
+  stock_id: 102
+  restaurant_id: 25
+  hours: всегда
+
+stock_hour56:
+  id: 4955
+  stock_id: 102
+  restaurant_id: 26
+  hours: всегда
+
+stock_hour57:
+  id: 4959
+  stock_id: 102
+  restaurant_id: 22
+  hours: всегда
+
+stock_hour58:
+  id: 4961
+  stock_id: 102
+  restaurant_id: 16
+  hours: всегда
+
+stock_hour59:
+  id: 4969
+  stock_id: 102
+  restaurant_id: 23
+  hours: всегда
+
+stock_hour60:
+  id: 4978
+  stock_id: 102
+  restaurant_id: 21
+  hours: всегда
+
+stock_hour61:
+  id: 4980
+  stock_id: 102
+  restaurant_id: 30
+  hours: всегда
+
+stock_hour62:
+  id: 5006
+  stock_id: 96
+  restaurant_id: 17
+  hours: всегда
+
+stock_hour63:
+  id: 5027
+  stock_id: 96
+  restaurant_id: 19
+  hours: всегда
+
+stock_hour64:
+  id: 5028
+  stock_id: 96
+  restaurant_id: 20
+  hours: всегда
+
+stock_hour65:
+  id: 5047
+  stock_id: 96
+  restaurant_id: 29
+  hours: всегда
+
+stock_hour66:
+  id: 5053
+  stock_id: 96
+  restaurant_id: 18
+  hours: всегда
+
+stock_hour67:
+  id: 5061
+  stock_id: 96
+  restaurant_id: 28
+  hours: всегда
+
+stock_hour68:
+  id: 5076
+  stock_id: 96
+  restaurant_id: 24
+  hours: всегда
+
+stock_hour69:
+  id: 5080
+  stock_id: 96
+  restaurant_id: 27
+  hours: всегда
+
+stock_hour70:
+  id: 5081
+  stock_id: 96
+  restaurant_id: 25
+  hours: всегда
