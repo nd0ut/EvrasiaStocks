@@ -6,10 +6,23 @@
   - @restaurants.each do |r|
     %li.restaurant
       .alert-box.secondary
-        %h6
+        %h5
           = link_to restaurant_path(r) do
             %span.street=r.street
 
-        %h6.subheader= r.metro
-        %h6.subheader= r.phone
-        %h6.subheader= r.business_hours
+        %h6.subheader
+          %b Город:
+          = r.city.name
+
+        -unless r.metro.empty?
+          %h6.subheader
+            %b Метро:
+            = r.metro
+
+        %h6.subheader
+          %b Телефон:
+          = r.phone
+
+        %h6.subheader
+          %b Время работы:
+          = r.business_hours
