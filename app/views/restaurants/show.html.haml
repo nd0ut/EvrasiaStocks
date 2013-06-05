@@ -3,15 +3,16 @@
     .small.large.columns
       %h3= link_to @restaurant.title, @restaurant.originalLink, :title => '_blank'
 
-      %h6.subheader
-        %b
-          Город:
-        = @restaurant.city.name
 
       %h6.subheader
         %b
           Улица:
         = link_to @restaurant.street, addr2maps(@restaurant.street, @restaurant.city.name), :target => '_blank'
+
+      %h6.subheader
+        %b
+          Город:
+        = @restaurant.city.name
 
       -unless @restaurant.metro.empty?
         %h6.subheader
