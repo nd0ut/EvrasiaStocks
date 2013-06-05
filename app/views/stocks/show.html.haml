@@ -26,8 +26,11 @@
             .alert-box.secondary
               .row
                 .small.large.columns
+                  = link_to r.title, restaurant_path(r)
+              .row
+                .small.large.columns
                   Улица:
-                  =link_to restaurant_path(r) do
+                  =link_to addr2maps(r.street, r.city.name), :target => '_blank'  do
                     %span.street=r.street
               .row
                 .small.large.columns

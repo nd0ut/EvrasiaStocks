@@ -1,10 +1,28 @@
-.panel
+.panel#restaurant_info
   .row
     .small.large.columns
       %h3= link_to @restaurant.title, @restaurant.originalLink
-      .subheader= "Улица: #{@restaurant.street}"
-      .subheader= "Метро: #{@restaurant.metro}"
-      .subheader= "Часы работы: #{@restaurant.business_hours}"
+
+      %h6.subheader
+        %b Город:
+        = @restaurant.city.name
+
+      %h6.subheader
+        %b Улица:
+        = link_to @restaurant.street, addr2maps(@restaurant.street, @restaurant.city.name), :target => '_blank'
+
+      -unless @restaurant.metro.empty?
+        %h6.subheader
+          %b Метро:
+          = @restaurant.metro
+
+      %h6.subheader
+        %b Телефон:
+        = @restaurant.phone
+
+      %h6.subheader
+        %b Время работы:
+        = @restaurant.business_hours
 
   .row
     .small.large.columns
@@ -13,9 +31,9 @@
       %ul.small-block-grid-2.large-block-grid-4
         - @restaurant.stocks.each do |s|
           %li
-            .alert-box.secondary
+            .alert-box.secondary.stock
               = link_to stock_path(s) do
                 = image_tag s.image_url, :class => 'th'
               %center
                 %br
-                .subheader= s.stock_hours.find_by(stock_id: s.id).hours
+                .subheader= s.stock_hours.where(stock_id: s.id).first.hours
