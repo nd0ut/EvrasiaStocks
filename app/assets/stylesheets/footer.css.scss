@@ -1,9 +1,16 @@
-#footer label {
-  padding: 5px;
-}
+#footer {
 
-#footer #buttons {
-  padding-top: 5px;
+  #buttons {
+    padding-top: 5px;
+  }
+
+  #text {
+    padding-top: 0px;
+
+    h4 {
+      margin: 0;
+    }
+  }
 }
 
 #footer.panel {
