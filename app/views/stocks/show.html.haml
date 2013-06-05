@@ -26,7 +26,8 @@
             .alert-box.secondary
               .row
                 .small.large.columns
-                  = link_to r.title, restaurant_path(r), :title => '_blank'
+                  = link_to restaurant_path(r), :title => '_blank'
+                    %span.title= r.title
               .row
                 .small.large.columns
                   Улица:
@@ -35,4 +36,4 @@
               .row
                 .small.large.columns
                   Время акции:
-                  =r.stock_hours.find_by(stock_id: @stock.id).hours
+                  %span.hours=r.stock_hours.find_by(stock_id: @stock.id).hours

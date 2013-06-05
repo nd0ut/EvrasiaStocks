@@ -7,17 +7,25 @@ search_filter = (search_string) ->
     r = $(r)
     r.removeHighlight()
 
+    title = r.find('span.title')[0]
     street = r.find('span.street')[0]
     metro = r.find('span.metro')[0]
+    hours = r.find('span.hours')[0]
 
+    found_in_title = street.innerHTML.toLowerCase().indexOf(search_string) != -1
     found_in_street = street.innerHTML.toLowerCase().indexOf(search_string) != -1
 
     found_in_metro = false
     if metro != undefined
       found_in_metro = metro.innerHTML.toLowerCase().indexOf(search_string) != -1
 
-    if found_in_street || found_in_metro
-      r.highlight(search_string)
+    found_in_hours = hours.innerHTML.toLowerCase().indexOf(search_string) != -1
+
+    if found_in_street || found_in_metro || found_in_title || found_in_hours
+      $(title).highlight(search_string)
+      $(street).highlight(search_string)
+      $(metro).highlight(search_string)
+      $(hours).highlight(search_string)
       r.show()
     else
       r.removeHighlight()
