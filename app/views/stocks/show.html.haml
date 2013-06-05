@@ -1,17 +1,18 @@
 .panel
   .row
-    .small.large.columns
-      %h3= link_to @stock.title, @stock.originalLink
-
-  .row
-    .small.large-4.columns
+    .small.large-2.columns
       = image_tag @stock.image_url, :class => 'th'
+    .small.large-10.columns
+      %h3= link_to @stock.title, @stock.originalLink
+      %a#toggle_description Показать полную информацию
+
+  .row#description
+    .small.large.large-centered.columns
       %br
-      %br
-    .small.large-8.columns
       %p= @stock.description.html_safe
 
   .row
+    %br
     .small.large-3.columns
       %h3 Рестораны
     .small.large-9.columns
@@ -19,7 +20,7 @@
 
   .row
     .small.large.columns
-      %ul.small-block-grid-1.large-block-grid-2#restaurants
+      %ul.small-block-grid-1.large-block-grid-2#stock-restaurants
         - @stock.restaurants.each do |r|
           %li.restaurant
             .alert-box.secondary

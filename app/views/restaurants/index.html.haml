@@ -1,8 +1,15 @@
-%ul.small-block-grid-1.large-block-grid-3
+.row
+  .small.large.columns
+    = render 'partials/search'
+
+%ul.small-block-grid-1.large-block-grid-3#restaurants
   - @restaurants.each do |r|
-    %li
+    %li.restaurant
       .alert-box.secondary
-        %h6= link_to r.street, restaurant_path(r)
+        %h6
+          = link_to restaurant_path(r) do
+            %span.street=r.street
+
         %h6.subheader= r.metro
         %h6.subheader= r.phone
         %h6.subheader= r.business_hours
