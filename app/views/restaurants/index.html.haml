@@ -7,7 +7,7 @@
     %li.restaurant
       .alert-box.secondary
         %h5
-          = link_to restaurant_path(r) do
+          = link_to restaurant_path(r), :title => '_blank' do
             %span.street=r.street
 
         %h6.subheader
@@ -17,7 +17,7 @@
         -unless r.metro.empty?
           %h6.subheader
             %b Метро:
-            = r.metro
+            %span.metro= r.metro
 
         %h6.subheader
           %b Телефон:

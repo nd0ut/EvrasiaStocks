@@ -1,7 +1,7 @@
 .panel#restaurant_info
   .row
     .small.large.columns
-      %h3= link_to @restaurant.title, @restaurant.originalLink
+      %h3= link_to @restaurant.title, @restaurant.originalLink, :title => '_blank'
 
       %h6.subheader
         %b
@@ -37,7 +37,7 @@
         - @restaurant.stocks.each do |s|
           %li
             .alert-box.secondary.stock
-              = link_to stock_path(s) do
+              = link_to stock_path(s), :title => '_blank' do
                 = image_tag s.image_url, :class => 'th'
               %center
                 %br

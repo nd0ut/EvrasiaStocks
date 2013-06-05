@@ -3,7 +3,7 @@
     .small.large-2.columns
       = image_tag @stock.image_url, :class => 'th'
     .small.large-10.columns
-      %h3= link_to @stock.title, @stock.originalLink
+      %h3= link_to @stock.title, @stock.originalLink, :title => '_blank'
       %a#toggle_description Показать полную информацию
 
   .row#description
@@ -26,7 +26,7 @@
             .alert-box.secondary
               .row
                 .small.large.columns
-                  = link_to r.title, restaurant_path(r)
+                  = link_to r.title, restaurant_path(r), :title => '_blank'
               .row
                 .small.large.columns
                   Улица:
