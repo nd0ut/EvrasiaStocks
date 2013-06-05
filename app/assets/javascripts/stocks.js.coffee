@@ -33,7 +33,9 @@ search_filter = (search_string) ->
 
 
 $(document).ready ->
-#  search form
+#
+# search form
+#
   search_form = $('form#search')
 
   search_input = search_form.find('input')[0]
@@ -51,7 +53,9 @@ $(document).ready ->
     search_filter(search_input.value)
     e.preventDefault()
 
-#  show description link
+#
+# show description link
+#
   toggle_description_link = $('#toggle_description')
   description = $('#description')[0]
 
