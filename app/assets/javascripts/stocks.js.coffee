@@ -29,7 +29,7 @@ $(document).ready ->
   $(search_input).keyup ->
     length = this.value.length
 
-    if length > 2 or length == 0
+    if length > 1 or length == 0
       search_filter(this.value)
 
   $(search_input).keypress (e) ->
