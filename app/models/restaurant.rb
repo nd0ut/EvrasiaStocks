@@ -11,6 +11,6 @@ class Restaurant < ActiveRecord::Base
   end
 
   def originalLink
-    return "http://evrasia.spb.ru/address/#{id}.html"
+    return "http://evrasia.spb.ru/address/view/#{id}.html"
   end
 end
