@@ -1,0 +1,5 @@
+%ul.small-block-grid-2.large-block-grid-4
+  - @stocks.each do |s|
+    %li
+      = link_to stock_path(s) do
+        = image_tag s.image_url, :class => 'th'
