@@ -5,12 +5,18 @@ search_filter = (search_string) ->
 
   restaurants.each (i, r) ->
     street = $(r).find('span.street')[0]
-    found = street.innerHTML.toLowerCase().indexOf(search_string)
+    metro = $(r).find('span.metro')[0]
 
-    if found == -1
-      $(r).hide()
-    else
+    found_in_street = street.innerHTML.toLowerCase().indexOf(search_string) != -1
+
+    found_in_metro = false
+    if metro != undefined
+      found_in_metro = metro.innerHTML.toLowerCase().indexOf(search_string) != -1
+
+    if found_in_street || found_in_metro
       $(r).show()
+    else
+      $(r).hide()
 
 
 $(document).ready ->
