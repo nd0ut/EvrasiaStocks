@@ -1,5 +1,5 @@
 class Restaurant < ActiveRecord::Base
-  has_one :city
+  belongs_to :city
 
   has_many :stock_hours
   has_many :stocks, :through => :stock_hours
