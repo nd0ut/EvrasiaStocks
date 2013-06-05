@@ -7,11 +7,15 @@
     %title= content_for?(:title) ? yield(:title) : "Счастье в Евразии"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/custom.modernizr"
+
     = csrf_meta_tags
   %body
-    %div.row
-      %div.small.small-centered.large-10.large-centered.columns
+    .row
+      .small.small-centered.large-10.large-centered.columns
         = render 'partials/navbar'
         = yield
+    .row
+      .small.small-centered.large-10.large-centered.columns
+        = render 'partials/footer'
 
   = javascript_include_tag "application"
