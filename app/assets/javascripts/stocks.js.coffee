@@ -5,7 +5,7 @@ search_filter = (search_string) ->
 
   restaurants.each (i, r) ->
     street = $(r).find('span.street')[0]
-    found = street.innerText.toLowerCase().indexOf(search_string)
+    found = street.innerHTML.toLowerCase().indexOf(search_string)
 
     if found == -1
       $(r).hide()
