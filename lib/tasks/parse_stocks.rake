@@ -1,6 +1,5 @@
 require "nokogiri"
 require "open-uri"
-require "base64"
 
 namespace :parse do
   desc "Parsing stocks"
