@@ -4,20 +4,20 @@ require "open-uri"
 namespace :parse do
   desc "Parsing stock hours"
 
-  EVRASIA_URL = "http://www.evrasia.spb.ru"
-  STOCKS_URL = EVRASIA_URL + '/public/akcii.html'
+  Evrasia_url = "http://www.evrasia.spb.ru"
+  Stocks_url = Evrasia_url + '/public/akcii.html'
 
   task :stock_hours => :environment do
     puts "Parsing stock hours..."
 
     StockHours.delete_all
 
-    doc = Nokogiri::HTML(open(STOCKS_URL))
+    doc = Nokogiri::HTML(open(Stocks_url))
 
     stocks = doc.css("table#public_table div.public_list")
 
     stocks.each do |s|
-      s_url =  EVRASIA_URL + s.at_css("a")['href']
+      s_url =  Evrasia_url + s.at_css("a")['href']
       s_id = s_url[/\d+/]
 
       restaurants = parse_stock_url_for_restaurants(s_url)

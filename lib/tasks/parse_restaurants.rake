@@ -4,19 +4,19 @@ require "open-uri"
 namespace :parse do
   desc "Parsing restaurants"
 
-  EVRASIA_URL = "http://www.evrasia.spb.ru"
+  Evrasia_url = "http://www.evrasia.spb.ru"
 
   task :restaurants => :environment do
     puts "Parsing restaurants..."
 
     Restaurant.delete_all
 
-    doc = Nokogiri::HTML(open(EVRASIA_URL))
+    doc = Nokogiri::HTML(open(Evrasia_url))
 
     cities_a = doc.css("li#menu_list_24 > ul > li > a")
 
     cities_a.each do |city_a|
-      city_url = EVRASIA_URL + city_a['href']
+      city_url = Evrasia_url + city_a['href']
 
       parse_city_url(city_url)
     end
@@ -32,7 +32,7 @@ namespace :parse do
     restaurants = doc.css("div#treeview a")
 
     restaurants.each do |r|
-      r_url = EVRASIA_URL + r['href']
+      r_url = Evrasia_url + r['href']
 
       parse_restaurant_url(r_url, city_id)
     end
