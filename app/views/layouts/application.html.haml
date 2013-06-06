@@ -11,14 +11,13 @@
     = csrf_meta_tags
   %body
     .row
-      .row
-        .small.small-centered.large-11.large-centered.columns
-          = render 'partials/navbar'
-      .row
-        .small.small-centered.large-11.large-centered.columns
-          = yield
-      .row
-        .small.small-centered.large-11.large-centered.columns
-          = render 'partials/footer'
+      .small.small-centered.large-11.large-centered.columns
+        = render 'partials/navbar'
+    .row
+      .small.small-centered.large-11.large-centered.columns
+        = yield
+    .row
+      .small.small-centered.large-11.large-centered.columns
+        = render 'partials/footer'
 
   = javascript_include_tag "application"
