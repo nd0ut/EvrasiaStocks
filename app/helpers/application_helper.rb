@@ -1,6 +1,6 @@
 module ApplicationHelper
   def cp(path)
-    "active" if current_page?(path) || current_page?(root_path)
+    "active" if current_page?(path)
   end
 
   def addr2maps(addr, city)
