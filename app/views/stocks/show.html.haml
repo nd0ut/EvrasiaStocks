@@ -35,6 +35,11 @@
                     =link_to addr2maps(r.street, r.city.name), :target => '_blank'  do
                       %span.street=r.street
 
+                  -unless r.metro.empty?
+                    %h6.subheader
+                      %b Метро:
+                      %span.metro= r.metro
+
                   %h6.subheader
                     %b Время акции:
                     - hours = r.stock_hours.where(stock_id: @stock.id).first.hours

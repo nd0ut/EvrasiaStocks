@@ -1,5 +1,11 @@
-#restaurants li.restaurant > div {
-  min-height: 130px;
+#restaurants {
+  li.restaurant > div {
+    min-height: 140px;
+  }
+
+  li {
+    clear: none !important;
+  }
 }
 
 .panel#restaurant_info .stock {
