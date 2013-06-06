@@ -1,5 +1,11 @@
-#stock-restaurants li.restaurant > div{
-  min-height: 100px;
+#stock-restaurants {
+  li.restaurant > div{
+    min-height: 100px;
+  }
+
+  li {
+    clear: none !important;
+  }
 }
 
 form#search {
