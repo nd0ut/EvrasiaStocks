@@ -4,6 +4,6 @@ class StocksController < ApplicationController
   end
 
   def show
-    @stock = Stock.find_by(id: params['id'])
+    @stock = Stock.find(params[:id])
   end
 end
