@@ -37,4 +37,8 @@
 
                   %h6.subheader
                     %b Время акции:
-                    %span.hours= r.stock_hours.where(stock_id: @stock.id).first.hours
+                    - hours = r.stock_hours.where(stock_id: @stock.id).first.hours
+                    %span.hours= hours
+                    - if stock_now?(hours)
+                      %span.label.success
+                        сейчас
