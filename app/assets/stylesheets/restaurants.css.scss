@@ -1,10 +1,10 @@
+@import "my_vars.css.scss";
+
 #restaurants {
-  li.restaurant > div {
-    min-height: 140px;
-  }
 
   li {
     clear: none !important;
+    min-height: $panelMinHeight;
   }
 }
 

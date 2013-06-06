@@ -1,10 +1,9 @@
-#stock-restaurants {
-  li.restaurant > div{
-    min-height: 140px;
-  }
+@import "my_vars.css.scss";
 
+#stock-restaurants {
   li {
     clear: none !important;
+    min-height: $panelMinHeight;
   }
 }
 
