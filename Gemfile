@@ -46,6 +46,7 @@ gem 'nokogiri'
 gem 'haml-rails'
 
 group :production do
+  #heroku
   gem "pg"
 end
 
