@@ -55,4 +55,5 @@ group :development do
 end
 
 gem 'zurb-foundation'
+gem 'unicode'
 gem 'russian'
