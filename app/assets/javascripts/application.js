@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery.highlight
+//= require detectmobile
 // require jquery_ujs
 //= require foundation/foundation
 //= require foundation/foundation.topbar

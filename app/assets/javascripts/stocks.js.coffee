@@ -41,8 +41,9 @@ $(document).ready ->
   search_input = search_form.find('input')[0]
   search_button = search_form.find('button')[0]
 
-  $(search_input).keyup ->
-    search_filter(this.value)
+  unless $.browser.mobile
+    $(search_input).keyup ->
+      search_filter(this.value)
 
   $(search_input).keypress (e) ->
     if e.which == 13
