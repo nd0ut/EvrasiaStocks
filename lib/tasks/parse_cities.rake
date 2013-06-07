@@ -4,14 +4,12 @@ require "open-uri"
 namespace :parse do
   desc "Parsing cities"
 
-  Evrasia_url = "http://www.evrasia.spb.ru"
-
   task :cities => :environment do
     puts "Parsing cities..."
 
     City.delete_all
 
-    doc = Nokogiri::HTML(open(Evrasia_url))
+    doc = Nokogiri::HTML(open(EVRASIA_URL))
 
     cities = doc.css("li#menu_list_24 > ul > li > a")
 
