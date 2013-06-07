@@ -1,9 +1,11 @@
 !!!
-%html{:lang => "en"}
+%html{:lang => "ru"}
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+
     %title= content_for?(:title) && !current_page?(root_path )? yield(:title) : "Счастье в Евразии"
+
     = favicon_link_tag
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/custom.modernizr"
