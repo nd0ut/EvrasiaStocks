@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
 end
 
+private
 def render_404
   render :template => 'error_pages/404', :layout => true, :status => :not_found
 end
