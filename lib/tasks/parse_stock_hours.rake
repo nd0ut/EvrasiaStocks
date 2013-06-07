@@ -23,7 +23,7 @@ namespace :parse do
       restaurants = parse_stock_url_for_restaurants(s_url)
 
       restaurants.each do |id, hours|
-        Restaurant.find_by(id: id).addStock(s_id, hours)
+        Restaurant.find_by(id: id).add_stock(s_id, hours)
       end
     end
 
