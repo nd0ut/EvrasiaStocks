@@ -42,7 +42,7 @@
                 = image_tag s.image_url, :class => 'th'
               %center
                 %br
-                - hours = s.stock_hours.where(restaurant_id: @restaurant.id).first.hours
+                - hours = s.stock_hours.find_by_restaurant_id(@restaurant.id).hours
                 .subheader= hours
                 - if stock_now?(hours)
                   %span.label.success
