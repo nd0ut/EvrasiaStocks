@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.highlight
 // require jquery_ujs
 //= require foundation/foundation
 //= require foundation/foundation.topbar
