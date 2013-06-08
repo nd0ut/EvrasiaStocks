@@ -4,7 +4,7 @@ require 'russian'
 
 module StocksHelper
   def stock_now?(str_hours)
-    return false if str_hours == 'всегда'
+    return true if str_hours == 'всегда'
 
     # флаг
     stock_now = false
@@ -85,7 +85,7 @@ module StocksHelper
     end
 
 
-    return our_interval.include?(weekday)
+    our_interval.include?(weekday)
   end
 
 

@@ -45,7 +45,13 @@
               %center
                 %br
                 - hours = s.stock_hours.find_by_restaurant_id(@restaurant.id).hours
-                .subheader= hours
-                - if stock_now?(hours)
+
+                - if hours == 'всегда'
                   %span.label.success
-                    сейчас
+                    всегда
+                - else
+                  .subheader= hours
+
+                  - if stock_now?(hours)
+                    %span.label.success
+                      сейчас
