@@ -14,20 +14,23 @@ namespace :parse do
     stocks = doc.css("table#public_table div.public_list")
 
     stocks.each do |s|
-      s_url = EVRASIA_URL + s.at_css("a")['href']
-      s_id = s_url[/\d+/]
+      stock_url = EVRASIA_URL + s.at_css("a")['href']
+      stock_id = stock_url[/\d+/]
 
-      restaurants = parse_stock_url_for_restaurants(s_url)
+      restaurants = parse_restaurants_and_stock_hours(stock_url)
 
-      restaurants.each do |id, hours|
-        Restaurant.find(id).add_stock(s_id, hours)
+      restaurants.each do |id, stock_hours|
+        Restaurant.find(id).add_stock(stock_id, stock_hours)
       end
     end
 
     puts 'ok'
   end
 
-  def parse_stock_url_for_restaurants(stock_url)
+
+  # парсит часы проведения данной акции во всех ресторанах
+  # возвращает массив id ресторанов с их часами проведения акции
+  def parse_restaurants_and_stock_hours(stock_url)
     restaurants = []
 
     doc = Nokogiri::HTML(open(stock_url))
@@ -35,16 +38,13 @@ namespace :parse do
     city_list = doc.css("table div.treeview > ul > li")
 
     city_list.each do |c|
-      c_name = c.at_css("span").children.text
-      c_id = City.find_by_name(c_name).id
+      restaurants_list = c.css("ul > li > ul > li")
 
-      c_restaurants_list = c.css("ul > li > ul > li")
+      restaurants_list.each do |r|
+        id = r.at_css("a")['href'][/\d+/]
+        stock_hours = r.at_css("i").nil? ? "всегда" : r.at_css("i").children.text[1..-2].gsub(/\s+/, ' ')
 
-      c_restaurants_list.each do |c_r|
-        c_r_id = c_r.at_css("a")['href'][/\d+/]
-        c_r_hours = c_r.at_css("i").nil? ? "всегда" : c_r.at_css("i").children.text[1..-2].gsub /\s+/, ' '
-
-        restaurants.push([c_r_id, c_r_hours])
+        restaurants.push([id, stock_hours])
       end
     end
 

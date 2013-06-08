@@ -15,16 +15,16 @@ namespace :parse do
     stocks = doc.css("table#public_table div.public_list")
 
     stocks.each do |s|
-      s_url =  EVRASIA_URL + s.at_css("a")['href']
-      s_id = s_url[/\d+/]
-      s_title = s.css("div > a").children.text
-      s_description = parse_stock_description(s_url)
-      s_image_url = EVRASIA_URL + s.at_css("a > img")['src']
+      url = EVRASIA_URL + s.at_css("a")['href']
+      id = url[/\d+/]
+      title = s.css("div > a").children.text
+      description = parse_stock_description(url)
+      image_url = EVRASIA_URL + s.at_css("a > img")['src']
 
-      Stock.create! id: s_id,
-                    title: s_title,
-                    description: s_description,
-                    image_url: s_image_url
+      Stock.create! id: id,
+                    title: title,
+                    description: description,
+                    image_url: image_url
 
     end
 
@@ -34,7 +34,7 @@ namespace :parse do
   def parse_stock_description(stock_url)
     doc = Nokogiri::HTML(open(stock_url))
 
-    description = ""
+    description = String.new
 
     doc.css("div.public_view > p").each do |d|
       description += d.children.text + "<BR><BR>";
