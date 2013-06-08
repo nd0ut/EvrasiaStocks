@@ -5,7 +5,7 @@
     .small.large-2.columns
       = image_tag @stock.image_url, :class => 'th'
     .small.large-10.columns
-      %h3= link_to @stock.title, @stock.originalLink, :title => '_blank'
+      %h3= link_to @stock.title, @stock.original_link, :title => '_blank'
       %a#toggle_description Показать полную информацию
 
   .row#description
