@@ -4,4 +4,6 @@ EvrasiaStocks::Application.routes.draw do
 
   get 'about' => 'about#index'
   root :to => 'stocks#index'
+
+  get "*path", :to => "application#render_404"
 end
