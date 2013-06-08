@@ -15,9 +15,6 @@ module StocksHelper
     # заменяем "00:00" на "24:00"
     str_hours.gsub! /00:00/, '24:00'
 
-    # удаляем повторяющиеся пробелы
-    str_hours.gsub! /\s+/, ' '
-
     # режем на части
     hours_parts = str_hours.split(', ')
 

@@ -14,13 +14,13 @@ namespace :parse do
     stocks = doc.css("table#public_table div.public_list")
 
     stocks.each do |s|
-      s_url =  EVRASIA_URL + s.at_css("a")['href']
+      s_url = EVRASIA_URL + s.at_css("a")['href']
       s_id = s_url[/\d+/]
 
       restaurants = parse_stock_url_for_restaurants(s_url)
 
       restaurants.each do |id, hours|
-        Restaurant.find_by(id: id).add_stock(s_id, hours)
+        Restaurant.find(id).add_stock(s_id, hours)
       end
     end
 
@@ -42,7 +42,7 @@ namespace :parse do
 
       c_restaurants_list.each do |c_r|
         c_r_id = c_r.at_css("a")['href'][/\d+/]
-        c_r_hours = c_r.at_css("i").nil? ? "всегда" : c_r.at_css("i").children.text[1..-2]
+        c_r_hours = c_r.at_css("i").nil? ? "всегда" : c_r.at_css("i").children.text[1..-2].gsub /\s+/, ' '
 
         restaurants.push([c_r_id, c_r_hours])
       end
