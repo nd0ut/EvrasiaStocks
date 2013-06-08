@@ -17,6 +17,6 @@ json.stocks do
 
     json.id s.id
     json.hours hours
-    json.now stock_now?(hours)
+    json.now s.now?(hours)
   end
 end

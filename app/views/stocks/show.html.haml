@@ -46,6 +46,6 @@
                     %b Время акции:
                     - hours = r.stock_hours.find_by_stock_id(@stock.id).hours
                     %span.hours= hours
-                    - if stock_now?(hours)
+                    - if @stock.now?(hours)
                       %span.label.success
                         сейчас

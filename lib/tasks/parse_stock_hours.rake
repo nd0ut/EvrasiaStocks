@@ -42,7 +42,16 @@ namespace :parse do
 
       restaurants_list.each do |r|
         id = r.at_css("a")['href'][/\d+/]
-        stock_hours = r.at_css("i").nil? ? "всегда" : r.at_css("i").children.text[1..-2].gsub(/\s+/, ' ')
+        stock_hours = r.at_css("i").nil? ? "всегда" : r.at_css("i").children.text[1..-2]
+
+        # в нижний регистр
+        stock_hours = stock_hours.mb_chars.downcase.to_s
+
+        # чистим от мусора
+        stock_hours.gsub!(/\s+/, ' ')
+        stock_hours.gsub!(/- /, '-')
+        stock_hours.gsub!(/\ -/, '-')
+        stock_hours.gsub!(/\./, '')
 
         restaurants.push([id, stock_hours])
       end
