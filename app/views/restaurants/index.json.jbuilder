@@ -12,8 +12,11 @@ json.array!(@restaurants) do |r|
 
   json.stocks do
     json.array!(r.stocks) do |s|
+      hours = s.stock_hours.find_by_stock_id(s.id).hours
+
       json.id s.id
-      json.hours s.stock_hours.find_by_stock_id(s.id).hours
+      json.hours hours
+      json.now stock_now?(hours)
     end
   end
 end
