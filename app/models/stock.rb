@@ -107,9 +107,9 @@ class Stock < ActiveRecord::Base
   # например входит ли "23:00" в "12:00-18:00" - нет
   #
   def hours_range_include?(range, hour)
-    # парсим левый и правый конец временного интервала (12:00-23:00)
-    hour_left = DateTime.parse(range.split('-').first) - 1
-    hour_right = DateTime.parse(range.split('-').last) - 1
+    # парсим левый и правый конец временного интервала (например 12:00-23:00)
+    hour_left = DateTime.parse(range.split('-').first)
+    hour_right = DateTime.parse(range.split('-').last)
 
     # если левое время больше правого
     if hour_left > hour_right
