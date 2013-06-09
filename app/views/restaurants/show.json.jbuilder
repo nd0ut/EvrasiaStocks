@@ -13,10 +13,10 @@ end
 
 json.stocks do
   json.array!(r.stocks) do |s|
-    hours = s.stock_hours.find_by_stock_id(s.id).hours
+    stock_hours = s.stock_hours.find_by_stock_id(s.id)
 
     json.id s.id
-    json.hours hours
-    json.now s.now?(hours)
+    json.hours stock_hours.hours
+    json.now stock_hours.now?
   end
 end

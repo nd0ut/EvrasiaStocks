@@ -44,14 +44,14 @@
 
                   %h6.subheader
                     %b Время акции:
-                    - hours = @stock.stock_hours.find_by_restaurant_id(r.id).hours
+                    - stock_hours = @stock.stock_hours.find_by_restaurant_id(r.id)
 
-                    - if hours == 'всегда'
+                    - if stock_hours.hours == 'всегда'
                       %span.label.success
                         всегда
                     - else
-                      %span.hours= hours
+                      %span.hours= stock_hours.hours
 
-                      - if @stock.now?(hours)
+                      - if stock_hours.now?
                         %span.label.success
                           сейчас

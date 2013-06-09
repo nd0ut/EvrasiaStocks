@@ -44,14 +44,14 @@
                 = image_tag s.image_url, :class => 'th'
               %center
                 %br
-                - hours = s.stock_hours.find_by_restaurant_id(@restaurant.id).hours
+                - stock_hours = s.stock_hours.find_by_restaurant_id(@restaurant.id)
 
-                - if hours == 'всегда'
+                - if stock_hours.hours == 'всегда'
                   %span.label.success
                     всегда
                 - else
-                  .subheader= hours
+                  .subheader= stock_hours.hours
 
-                  - if s.now?(hours)
+                  - if stock_hours.now?
                     %span.label.success
                       сейчас
