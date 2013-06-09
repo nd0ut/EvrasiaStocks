@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.includes(:city).load
 
     respond_to do |format|
       format.html
@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.includes(:stock_hours).find(params[:id])
 
     respond_to do |format|
       format.html

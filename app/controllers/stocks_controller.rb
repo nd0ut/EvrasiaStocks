@@ -9,7 +9,7 @@ class StocksController < ApplicationController
   end
 
   def show
-    @stock = Stock.find(params[:id])
+    @stock = Stock.includes(:restaurants => :city).find(params[:id])
 
     respond_to do |format|
       format.html
