@@ -9,8 +9,8 @@
     %li.restaurant
       .alert-box.secondary
         %h5
-          = link_to restaurant_path(r), :title => '_blank', :class => 'title' do
-            %span.title=r.title
+          = link_to restaurant_path(r), :target => '_blank', :class => 'title' do
+            %span.title= r.title
 
         %h6.subheader
           %b Улица:

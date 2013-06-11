@@ -40,7 +40,7 @@
         - @restaurant.stocks.each do |s|
           %li
             .alert-box.secondary.stock
-              = link_to stock_path(s), :title => '_blank' do
+              = link_to stock_path(s), :target => '_blank' do
                 = image_tag s.image_url, :class => 'th'
               %center
                 %br
