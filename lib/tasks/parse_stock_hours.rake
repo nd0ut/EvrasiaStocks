@@ -52,6 +52,7 @@ namespace :parse do
         stock_hours.gsub!(/- /, '-')
         stock_hours.gsub!(/\ -/, '-')
         stock_hours.gsub!(/\./, '')
+        stock_hours.gsub!(/(?<=\d)( )(?=[а-яА-Я])/, ', ')
 
         restaurants.push([id, stock_hours])
       end
