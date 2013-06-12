@@ -86,8 +86,6 @@ class StockHours < ActiveRecord::Base
       # например "вс-чт"
       our_interval = all_weekdays.reverse.take(7 - weekday_left_index) +
           all_weekdays.take((7-(7 - weekday_left_index)-weekday_right_index-7).abs)
-
-      puts our_interval
     else
       # нужный нам интервал
       our_interval = all_weekdays.slice(Range.new(weekday_left_index, weekday_right_index))
@@ -113,7 +111,9 @@ class StockHours < ActiveRecord::Base
     # если левое время больше правого
     if hour_left > hour_right
       hour_right += 1
-      our_hour += 1
+
+      #TODO: тут надо отладить и протестировать на разных входных данных
+      #our_hour += 1
     end
 
     # если наше время входит в интервал, то все ок
