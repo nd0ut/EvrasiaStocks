@@ -53,6 +53,11 @@ end
 group :development do
   gem 'sqlite3'
   gem 'erb2haml'
+  gem 'rspec-rails'
+end
+
+group :test, :test do
+  gem 'rspec-rails'
 end
 
 gem 'zurb-foundation'
