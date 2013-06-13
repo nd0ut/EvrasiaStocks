@@ -111,9 +111,7 @@ class StockHours < ActiveRecord::Base
     # если левое время больше правого
     if hour_left > hour_right
       hour_right += 1
-
-      #TODO: тут надо отладить и протестировать на разных входных данных
-      #our_hour += 1
+      our_hour += 1 if our_hour < hour_left
     end
 
     # если наше время входит в интервал, то все ок
